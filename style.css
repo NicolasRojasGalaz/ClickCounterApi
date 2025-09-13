@@ -1,0 +1,179 @@
+/* ====== Variables (paleta “neón sobre negro”) ====== */
+:root{
+  --bg:#07090d;                 /* negro/azul muy oscuro */
+  --panel:#0b0f16;              /* panel oscuro */
+  --txt:#d9dde7;                /* texto principal */
+  --muted:#98a2b3;              /* texto secundario */
+  --cyan:#00e5ff;               /* acento cian */
+  --blue:#2aa9ff;               /* acento azul */
+  --mag:#ff335a;                /* acento rojo-magenta */
+  --glow: drop-shadow(0 0 14px rgba(0,229,255,.35));
+  --radius:16px;
+}
+
+/* ====== Reset base accesible ====== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background: radial-gradient(1200px 600px at 15% 0%, rgba(0,229,255,.08), transparent 60%),
+              radial-gradient(800px 400px at 90% 10%, rgba(255,51,90,.10), transparent 60%),
+              var(--bg);
+  color:var(--txt);
+  line-height:1.6;
+}
+
+/* ====== Decoración geométrica de fondo ====== */
+.bg-shapes{
+  position:fixed; inset:0; pointer-events:none; z-index:-1;
+  background:
+    radial-gradient(300px 300px at 10% 75%, rgba(0,229,255,.12), transparent 60%),
+    radial-gradient(260px 260px at 85% 60%, rgba(255,51,90,.12), transparent 60%),
+    linear-gradient(120deg, transparent 0 35%, rgba(255,255,255,.04) 36% 37%, transparent 38% 62%, rgba(255,255,255,.04) 63% 64%, transparent 65% 100%);
+  mask: linear-gradient(#000, transparent 60%);
+}
+
+/* ====== Navegación ====== */
+.nav{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 22px; background:rgba(11,15,22,.6);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.brand{font-weight:700; letter-spacing:.5px; color:var(--txt)}
+.menu{display:flex; gap:16px; align-items:center}
+.menu a{color:var(--txt); text-decoration:none; font-weight:500; opacity:.9}
+.menu a:hover{color:var(--cyan); filter:var(--glow)}
+.menu .btn{margin-left:4px}
+
+.brand img.logo {
+  height: 100px;          /* ajusta según el tamaño que quieras */
+  width: auto;
+  display: block;
+}
+
+.brand a {
+  display: inline-block;
+}
+
+/* ====== Botones ====== */
+.btn{
+  --p: .85rem;
+  padding:.55rem .95rem; border-radius:10px;
+  border:1px solid rgba(255,255,255,.12);
+  text-decoration:none; color:var(--txt);
+  transition:transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  color:#031318; border-color:transparent; filter:var(--glow);
+}
+.btn.ghost{
+  background:transparent;
+  border-image: linear-gradient(135deg, var(--mag), var(--cyan)) 1;
+}
+.btn.tiny{padding:.4rem .7rem; font-size:.9rem}
+
+/* ====== Hero ====== */
+.hero{
+  max-width:1120px; margin:0 auto; padding:96px 20px 56px;
+  text-align:center;
+}
+.hero h1{
+  font-size:clamp(2rem, 4.5vw, 3.2rem);
+  line-height:1.15; margin:0 0 10px;
+  text-shadow:0 0 18px rgba(42,169,255,.18);
+}
+.accent{color:var(--cyan); filter:var(--glow)}
+.lead{color:var(--muted); max-width:760px; margin:0 auto}
+.cta{margin-top:22px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+
+/* ====== Secciones ====== */
+.section{max-width:1100px; margin:0 auto; padding:56px 20px}
+.section h2{
+  font-size:1.6rem; letter-spacing:.3px; margin:0 0 14px 0;
+  color:var(--txt); text-align:center;
+  position:relative;
+}
+.section h2::after{
+  content:""; display:block; height:2px; width:82px; margin:8px auto 0;
+  background:linear-gradient(90deg, transparent, var(--mag), var(--cyan), transparent);
+  filter:var(--glow);
+}
+.section p{color:var(--muted); text-align:center; margin:0 auto; max-width:800px}
+
+/* ====== Badges ====== */
+.badges{list-style:none; padding:0; margin:18px auto 0; display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
+.badges li{
+  padding:.45rem .7rem; border-radius:999px;
+  background:linear-gradient(135deg, rgba(0,229,255,.18), rgba(255,51,90,.18));
+  border:1px solid rgba(255,255,255,.06);
+}
+
+/* ====== Grid Proyectos ====== */
+.grid{
+  margin-top:26px;
+  display:grid; gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.card{
+  position:relative; padding:18px; border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.06);
+  overflow:hidden; transition:transform .18s ease, border-color .18s ease;
+}
+.card::before{
+  /* borde duotono animado */
+  content:""; position:absolute; inset:-2px;
+  background:conic-gradient(from 180deg,
+     var(--mag), var(--mag), var(--cyan), var(--cyan), var(--mag));
+  filter:blur(20px) opacity(.25);
+  z-index:-1;
+}
+.card:hover{transform:translateY(-3px); border-color:rgba(0,229,255,.35)}
+.card h3{margin:2px 0 6px; color:#e7eefc}
+.card p{color:var(--muted)}
+.card .links{display:flex; gap:10px; margin-top:12px}
+
+/* ====== Contacto ====== */
+.contact .contact-links{display:flex; justify-content:center; gap:12px; margin-top:14px; flex-wrap:wrap}
+
+/* ====== Footer ====== */
+.footer{
+  text-align:center; padding:22px; color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.06);
+  background:rgba(11,15,22,.6); margin-top:32px;
+}
+
+/* ====== Responsivo menor a 420px ====== */
+@media (max-width:420px){
+  .menu a:not(.btn){display:none}
+  .brand{font-size:1rem}
+}
+
+/* 📱 Ajuste en pantallas pequeñas */
+@media (max-width: 600px) {
+  .brand img.logo {
+    height: 64px;  /* más pequeño en celular */
+  }
+}
+
+/* 💻 Ajuste en pantallas grandes */
+@media (min-width: 1200px) {
+  .brand img.logo {
+    height: 100px;  /* más grande en monitores grandes */
+  }
+}
+/* ====== STATS ====== */
+.stats-widget{
+  margin-top:12px;
+  display:flex; gap:10px; justify-content:center; align-items:center;
+  color:var(--muted);
+  flex-wrap:wrap;
+}
+.stats-widget strong{
+  color:#00A3A3; /* tu azul verdoso */
+  font-weight:700;
+}

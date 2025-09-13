@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIKOTOX · Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon (opcional): pon favicon.png en / -->
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <!-- Decoración de fondo con líneas/figuras -->
+  <div class="bg-shapes"></div>
+
+  <header class="nav">
+    <!--<div class="brand">NIKOTOX</div> -->
+    <div class="brand">
+        <a href="#">
+            <img src="img/Logo-Principal2.png" alt="Logo Nicolas Rojas" class="logo">
+        </a>
+    </div>
+    <nav class="menu">
+      <a href="#about">Sobre mí</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact" class="btn">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="h1">
+      <h1 id="h1">Desarrollador <span class="accent">.NET</span> & Web</h1>
+      <p class="lead">Construyo soluciones simples, rápidas y elegantes. Este es mi portafolio personal.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">Ver proyectos</a>
+        <a id="btnGitHub" class="btn ghost" href="https://github.com/NicolasRojasGalaz" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy ingeniero en informática con foco en C#/.NET ,Bases de datos & Automatización de procesos
+        Me gusta crear herramientas útiles y mantener un diseño limpio con buen rendimiento.
+      </p>
+      <ul class="badges" aria-label="Tecnologías">
+        <li>.NET</li><li>C#</li><li>ASP.NET Core</li><li>Oracle / SQL</li><li>HTML</li><li>CSS</li><li>JS</li><li>PowerAutomate</li><li>Electroneek</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Proyectos</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Página de Portafolio</h3>
+          <p>Landing minimalista con estética neón (este sitio).</p>
+          <div class="links">
+            <a class="btn tiny" href="#" aria-disabled="true">Demo</a>
+            <a class="btn tiny ghost" href="#" aria-disabled="true">Código</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>API de Monedas</h3>
+          <p>Servicio REST en ASP.NET Core para tipo de cambio.</p>
+          <div class="links">
+            <a class="btn tiny" href="#" aria-disabled="true">Demo</a>
+            <a class="btn tiny ghost" href="#" aria-disabled="true">Código</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Gestor de Tareas</h3>
+          <p>CRUD simple con autenticación y persistencia SQL.</p>
+          <div class="links">
+            <a class="btn tiny" href="#" aria-disabled="true">Demo</a>
+            <a class="btn tiny ghost" href="#" aria-disabled="true">Código</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contacto</h2>
+      <p>¿Tienes una idea o proyecto? Conversemos.</p>
+      <div class="contact-links">
+        <a class="btn primary" href="mailto:nicorojastrabajo@gmail.com" target="_blank" rel="noopener">Email</a>
+        <!-- ✅ AHORA con id correcto -->
+        <a id="btnLinkedIn" class="btn ghost" href="https://www.linkedin.com/in/nicolas-rojas98/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="stats-widget">
+        <span>LinkedIn:</span> <strong id="countLinkedIn">0</strong>
+        <span>· GitHub:</span> <strong id="countGitHub">0</strong>
+      </div>
+      
+      <script src="script.js"></script>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 NIKOTOX · Hecho con <span class="accent">HTML</span> & <span class="accent">CSS</span> <span class="accent">JS</span>
+  </footer>
+</body>
+</html>
